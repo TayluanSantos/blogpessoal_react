@@ -5,6 +5,9 @@ import Home from './pages/home/Home'
 import Cadastro from './pages/cadastro/Cadastro'
 import Login from './pages/login/Login'
 import { AuthProvider } from './contexts/AuthContext'
+import FormularioTema from './components/temas/formulariotema/FormularioTema'
+import ListaTemas from './components/temas/listartemas/ListaTemas'
+import DeletarTema from './components/temas/deletartema/DeletarTema'
 
 function App() {
   //Código Typescript
@@ -20,6 +23,10 @@ function App() {
             <Route path = "/home" element={<Home/>}/>
             <Route path = "/cadastro" element={<Cadastro/>}/>
             <Route path = "/login" element={<Login/>}/>
+            <Route path="/temas" element={<ListaTemas />} />
+            <Route path="/cadastroTema" element={<FormularioTema />} />
+            <Route path="/editarTema/:id" element={<FormularioTema />} />
+            <Route path="/deletarTema/:id" element={<DeletarTema />} />
           </Routes>
           </div>
           <Footer/>

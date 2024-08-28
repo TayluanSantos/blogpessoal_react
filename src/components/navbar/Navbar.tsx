@@ -21,8 +21,8 @@ function Navbar() {
         <div>
             <ul className="flex *:px-1">
               <li className="hover:underline cursor-pointer">Postagem</li>
-              <li className="hover:underline cursor-pointer">Tema</li>
-              <li className="hover:underline cursor-pointer">Cadastrar Tema</li>
+              <li className="hover:underline cursor-pointer"><Link to ='/temas'>Tema</Link></li>
+              <li className="hover:underline cursor-pointer"><Link to ='/cadastroTema'>Cadastrar Tema</Link></li>
               <li className="hover:underline cursor-pointer">Perfil</li>
               <li className="hover:underline cursor-pointer"><Link to ='' onClick={logout}>Sair </Link></li>
             </ul>
