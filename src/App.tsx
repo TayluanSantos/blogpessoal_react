@@ -8,6 +8,9 @@ import { AuthProvider } from './contexts/AuthContext'
 import FormularioTema from './components/temas/formulariotema/FormularioTema'
 import ListaTemas from './components/temas/listartemas/ListaTemas'
 import DeletarTema from './components/temas/deletartema/DeletarTema'
+import ListaPostagens from './components/postagens/listapostagem/ListaPostagens'
+import DeletarPostagem from './components/postagens/deletarpostagem/DeletarPostagem'
+import FormularioPostagem from './components/postagens/formulariopostagem/FormularioPostagem'
 
 function App() {
   //Código Typescript
@@ -27,6 +30,10 @@ function App() {
             <Route path="/cadastroTema" element={<FormularioTema />} />
             <Route path="/editarTema/:id" element={<FormularioTema />} />
             <Route path="/deletarTema/:id" element={<DeletarTema />} />
+            <Route path="/postagens" element={<ListaPostagens />} />
+            <Route path="/cadastroPostagem" element={<FormularioPostagem />} />
+            <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
+            <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
           </Routes>
           </div>
           <Footer/>
