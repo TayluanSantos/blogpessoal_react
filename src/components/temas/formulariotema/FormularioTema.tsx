@@ -1,9 +1,8 @@
-import React, { ChangeEvent, FormEvent, useContext, useEffect, useState } from 'react'
+import { ChangeEvent, FormEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AuthContext from '../../../contexts/AuthContext';
 import Tema from '../../../model/Tema';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
-import { TelegramLogo } from '@phosphor-icons/react';
 import { RotatingLines } from 'react-loader-spinner';
 
 function FormularioTema() {

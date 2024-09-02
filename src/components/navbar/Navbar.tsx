@@ -20,7 +20,7 @@ function Navbar() {
         </div>
         <div>
             <ul className="flex *:px-1">
-              <li className="hover:underline cursor-pointer">Postagem</li>
+              <li className="hover:underline cursor-pointer"><Link to ='/postagens'>Postagens</Link></li>
               <li className="hover:underline cursor-pointer"><Link to ='/temas'>Tema</Link></li>
               <li className="hover:underline cursor-pointer"><Link to ='/cadastroTema'>Cadastrar Tema</Link></li>
               <li className="hover:underline cursor-pointer">Perfil</li>
