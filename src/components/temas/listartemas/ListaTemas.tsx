@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
-import CardTemas from '../cardtemas/CardTemas'
+import { useContext, useEffect, useState } from 'react';
+import CardTemas from '../cardtemas/CardTemas';
 import Tema from '../../../model/Tema';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../../contexts/AuthContext';
 import { buscar } from '../../../services/Service';
-import { Dna } from '@phosphor-icons/react';
 import { DNA } from 'react-loader-spinner';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function ListaTemas() {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ function ListaTemas() {
   // Monitora o token
   useEffect(() => {
     if(token === '') {
-      alert('Você precisa estar logado');
+      ToastAlerta('Você precisa estar logado','info');
       navigate('/')
     }
   },[token])

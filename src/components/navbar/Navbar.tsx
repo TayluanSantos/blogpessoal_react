@@ -1,20 +1,23 @@
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import AuthContext from "../../contexts/AuthContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
   const navigate = useNavigate();
-  const {handleLogout} = useContext(AuthContext)
+  const {handleLogout,usuario} = useContext(AuthContext)
   
   function logout(){
     handleLogout();
-    alert("Usuário foi desconectado com sucesso!");
+    ToastAlerta("Usuário foi desconectado com sucesso!","sucesso");
     navigate("/");
   }
 
+  let component: ReactNode;
 
-  return (
-    <div className="flex justify-between  bg-indigo-900 px-20 py-3 text-white">
+  if(usuario.token !== "") {
+    component = (
+      <div className="flex justify-between  bg-indigo-900 px-20 py-3 text-white">
         <div className="text-2xl font-bold uppercase">
             <Link to='/home'>Blog Pessoal</Link>
         </div>
@@ -23,11 +26,18 @@ function Navbar() {
               <li className="hover:underline cursor-pointer"><Link to ='/postagens'>Postagens</Link></li>
               <li className="hover:underline cursor-pointer"><Link to ='/temas'>Tema</Link></li>
               <li className="hover:underline cursor-pointer"><Link to ='/cadastroTema'>Cadastrar Tema</Link></li>
-              <li className="hover:underline cursor-pointer">Perfil</li>
+              <li className="hover:underline cursor-pointer"><Link to ='/perfil'>Perfil</Link></li>
               <li className="hover:underline cursor-pointer"><Link to ='' onClick={logout}>Sair </Link></li>
             </ul>
         </div>
-    </div>
+     </div>
+    )
+  }
+
+  return (
+    <>
+      {component}
+    </>
   )
 }
 
